@@ -1763,6 +1763,7 @@ endif
 	source "package/openssh/Config.in"
 	source "package/openswan/Config.in"
 	source "package/openvpn/Config.in"
+	source "package/owncloud/Config.in"
 	source "package/p910nd/Config.in"
 	source "package/phidgetwebservice/Config.in"
 	source "package/phytool/Config.in"

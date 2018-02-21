@@ -1,0 +1,6 @@
+Config: configs/palle_defconfig
+
+make palle_defconfig
+make
+
+midlertidige rettelser i .config

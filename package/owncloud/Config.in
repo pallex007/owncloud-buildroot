@@ -1,0 +1,9 @@
+config BR2_PACKAGE_OWNCLOUD
+	bool "owncloud"
+	depends on BR2_PACKAGE_PHP	 # runtime
+	help
+	  OwnCloud is a web app for accessing and sharing your files,
+	  calendars, contacts, mail and more.
+
+comment "OwnCloud needs PHP"
+    depends on !BR2_PACKAGE_PHP
