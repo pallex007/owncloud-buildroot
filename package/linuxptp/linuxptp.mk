@@ -4,9 +4,9 @@
 #
 ################################################################################
 
-LINUXPTP_VERSION = 17c9787b1d6891636b5be9e4e5a08278b44e9a7a
-LINUXPTP_SITE_METHOD = git
-LINUXPTP_SITE = git://git.code.sf.net/p/linuxptp/code
+LINUXPTP_VERSION = 2.0
+LINUXPTP_SOURCE = linuxptp-$(LINUXPTP_VERSION).tgz
+LINUXPTP_SITE = http://downloads.sourceforge.net/linuxptp
 LINUXPTP_LICENSE = GPL-2.0+
 LINUXPTP_LICENSE_FILES = COPYING
 

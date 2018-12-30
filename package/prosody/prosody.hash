@@ -1,5 +1,8 @@
-# Hashes from: https://prosody.im/downloads/source/{MD5,SHA1,SHA256,SHA512}SUMS
-md5    d743adea6cfbaacc3a24cc0c3928bb1b  prosody-0.9.12.tar.gz
-sha1   1ee224263a5b3d67960e12edbbe6b2f16b95d147  prosody-0.9.12.tar.gz
-sha256 1a59a322b71928a21985522aa00d0eab3552208d7bf9ecb318542a1b2fee3e8d  prosody-0.9.12.tar.gz
-sha512 e87b5f3b3e327722cec9d8d0470684e2ec2788a1c5ae623c4f505a00572ef21f65afe84cd5b7de47d6a65fe8872506fe34e5e8886e20979ff84710669857ca76  prosody-0.9.12.tar.gz
+# Locally computed:
+md5    9157b6eaf05f7dfe004e38dbe950cafd  prosody-0.11.1.tar.gz
+sha1   dacce98fda317f5ba3c05842e2d97018d050b435  prosody-0.11.1.tar.gz
+sha256 91bec43f0798729e0a2b207613a745598ea3ca7dcb7fd85df44ccf04fa5c65aa  prosody-0.11.1.tar.gz
+sha512 6e25d2365d40582f57799bb08bf2673ba43270e8bcca5c5b785381380db55ec3ea6ab771fb9bd228bf265a564bb017dbfeae81713abd2de35a92704f8b8004ef  prosody-0.11.1.tar.gz
+
+# Hash for license file:
+sha256 bbbdc1c5426e5944cf869fc0faeaf19d88a220cd2b39ea98b7b8e86b0e88a2ef  COPYING

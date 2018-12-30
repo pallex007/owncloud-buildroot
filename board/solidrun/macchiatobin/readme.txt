@@ -15,19 +15,20 @@ How to build
 There are two build options: mainline support and vendor support.
 
 For the mainline BSP, we use:
- - Linux v4.14.4
- - U-Boot v2017.11
+ - Linux v4.19.2
+ - U-Boot v2018.11
 
 For the vendor BSP, we use the sources available from Marvell Github
 page at https://github.com/MarvellEmbeddedProcessors, which uses:
- - Linux v4.4.52
- - U-Boot v2017.03
+ - Linux v4.4.120
+ - U-Boot v2018.03
 
-At the moment mainline support for the board is a work in progress.
-Mainline kernel 4.14 with provided patches enables eth2 in 1Gb (RJ45
-connector J5) and eth0 in 10Gb (SFP connector J15). The vendor BSP
-enables more hardware features out of the box, e.g. all the network
-interfaces.
+At the moment mainline support for the board is a work in
+progress. Mainline kernel 4.19 enables eth2 in 1Gb (RJ45 connector J5),
+copper 10Gb interfaces, and automatic configuration of select SFP
+modules on the SFP cages. The vendor BSP enables more hardware features
+out of the box, but lacks support for SFP detection and automatic
+configuration.
 
 To use the mainline BSP run the following commands:
 
@@ -54,21 +55,32 @@ How to boot the board
 =====================
 
 The MacchiatoBin board can be setup to load the bootloader from
-different sources including eMMC, SPI flash, and SD-card. In order to
-select boot from SD-card DIP switches SW1 and SW2 should be configured
-as follows:
+different sources including eMMC, SPI flash, and SD-card.
+
+On Rev 1.2 board to select boot from SD-card the DIP switches
+SW1 and SW2 should be configured as follows:
 
 SW2: 01110
 SW1: 1xxxx
+
+The upcoming Rev 1.3 board will have a single pins header J1 instead
+of the SW1/2 DIP switches. To boot from SD-card the setting of J1
+jumpers should match the DIP switches of Rev v1.2 board
+from left to right:
+
+J1: 011101xxxx
 
 Insert the micro SDcard in the MacchiatoBin board and power it up.
 The serial console is accessible at the micro-USB Type-B connector
 marked CON9. The serial line settings are 115200 8N1.
 
-By default U-Boot will load its environment from the SPI flash. On the
-first boot SPI flash may be empty or it may contain a legacy
-environment incompatible with up-to-date mainline U-Boot and
-kernel. Then the following commands can be used to boot the board:
+Note: the following text only applies to the vendor BSP from
+solidrun_macchiatobin_marvell_defconfig.
+
+By default Marvell provided U-Boot will load its environment from the
+SPI flash. On the first boot SPI flash may be empty or it may contain a
+legacy environment that prevents proper boot. Then the following
+commands can be used to boot the board:
 
 => ext4load mmc 1:1 0x01700000 /boot/uEnv-example.txt
 => env import -t 0x01700000 $filesize
